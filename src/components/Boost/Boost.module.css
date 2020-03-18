@@ -1,0 +1,21 @@
+.Boost {
+  background-image: url("../../assets/images/bg-boost-desktop.svg");
+  background-size: cover;
+  background-color: #3a3053;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Boost h1 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 569px) {
+  .Boost {
+    background-image: url("../../assets/images/bg-boost-mobile.svg");
+  }
+}

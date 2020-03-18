@@ -1,0 +1,22 @@
+.SideDrawer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  border-radius: 10px;
+  top: 75px;
+  right: 0;
+  left: -1000%;
+  margin: auto;
+  padding: 1rem 0;
+  width: 320px;
+  height: max-content;
+  background-color: var(--Dark-Violet);
+  z-index: 50;
+  transition: 0.5s ease-in-out;
+}
+
+.SideDrawer.Shown {
+  left: 0;
+}

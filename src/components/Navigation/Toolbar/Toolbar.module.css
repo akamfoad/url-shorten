@@ -1,0 +1,66 @@
+.Toolbar {
+  width: 100%;
+  padding: 2rem 10rem;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: max-content max-content 1fr;
+  align-content: center;
+}
+
+.Toolbar > .Logo {
+  background-color: hsl(257, 27%, 26%);
+  mask: url("../../../assets/images/logo.svg");
+  width: 121px;
+  height: 33px;
+}
+
+.Toggle {
+  cursor: pointer;
+  display: none;
+  font-size: x-large;
+  color: var(--Gray);
+  margin-left: auto;
+  transition: all 0.5s ease-in-out;
+}
+
+@media (max-width: 1049px) {
+  .Toolbar {
+    text-align: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  .Logo {
+    margin: 0 auto 2rem auto;
+    grid-column: 1 / 3;
+  }
+}
+
+@media (max-width: 879px) {
+  .Toolbar {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  .Logo {
+    grid-column: 1 / 2;
+  }
+}
+
+@media (max-width: 679px) {
+  .Toolbar {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  .Logo {
+    grid-column: 1 / 2;
+    margin: 0;
+  }
+  .Toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 569px) {
+  .Toolbar {
+    padding: 2rem;
+  }
+}

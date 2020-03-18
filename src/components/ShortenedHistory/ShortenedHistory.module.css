@@ -1,0 +1,10 @@
+.ShortenedHistory {
+  width: 100%;
+  padding: 1rem 10rem;
+}
+
+@media (max-width: 569px) {
+  .ShortenedHistory {
+    padding: 1rem 2rem;
+  }
+}

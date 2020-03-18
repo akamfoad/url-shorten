@@ -1,0 +1,70 @@
+.AuthNav {
+  width: max-content;
+  display: flex;
+  justify-self: end;
+  align-items: center;
+  list-style: none;
+}
+
+.AuthNav.Mobile {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.AuthItem {
+  padding: 5px 15px;
+}
+
+.AuthItem.Mobile {
+  padding: 5px 2.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.Auth_Login a,
+.Auth_Login a:visited {
+  color: var(--Grayish-Violet);
+}
+
+.Auth_Login a:hover {
+  color: var(--Dark-Violet);
+}
+
+.Auth_Signup {
+  border-radius: 20px;
+  background-color: var(--Cyan);
+  margin-left: 25px;
+}
+
+.AuthItem.Mobile a,
+.AuthItem.Mobile a:visited {
+  color: #fff;
+}
+
+.Auth_Signup.Mobile {
+  margin-left: 0;
+}
+
+.Auth_Signup:hover {
+  background-color: var(--Grayish-Cyan);
+}
+
+.Auth_Signup a,
+.Auth_Signup a:visited {
+  color: #fff;
+}
+
+@media (max-width: 879px) {
+  .AuthNav {
+    padding-top: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 679px) {
+  .AuthNav {
+    padding: 0;
+    margin-top: 1rem;
+  }
+}

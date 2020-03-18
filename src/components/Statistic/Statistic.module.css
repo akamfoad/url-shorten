@@ -1,0 +1,177 @@
+.Statistic {
+  padding: 5rem 0 10rem 0;
+  margin-top: 10rem;
+  background-color: #f0f1f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--Family);
+  position: relative;
+}
+
+.Title_Section {
+  width: 570px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem;
+}
+
+.Title_Section h1 {
+  width: 100%;
+  font-family: inherit;
+  font-size: 2.3rem;
+  font-weight: var(--Bold-Weight);
+  color: var(--Very-Dark-Blue);
+}
+
+.Title_Section p {
+  font-family: inherit;
+  width: 490px;
+  color: var(--Grayish-Violet);
+}
+
+/* cards */
+.Cards {
+  position: relative;
+  display: flex;
+  padding: 2rem 10rem;
+  justify-content: space-between;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.Belt {
+  position: absolute;
+  top: 175px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 400px;
+  height: 10px;
+  background-color: var(--Cyan);
+}
+
+.Card {
+  position: relative;
+  width: 400px;
+  padding: 3rem 2rem 3rem 2rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 1px 0px var(--Grayish-Violet);
+  background-color: #fff;
+}
+
+.Card:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.Card .Avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--Dark-Violet);
+  position: absolute;
+  top: -35px;
+  left: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Card h3 {
+  margin: 1rem 0;
+  font-weight: var(--Bold-Weight);
+  color: var(--Very-Dark-Blue);
+}
+
+.Card p {
+  font-size: 0.9rem;
+  color: var(--Grayish-Violet);
+}
+
+/* .Card.Brand_Recognition {
+} */
+
+.Card.Detailed_Records {
+  bottom: -3rem;
+}
+
+.Card.Fully_Customizable {
+  bottom: -6rem;
+}
+
+@media (max-width: 1099px) {
+  .Cards {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Card .Avatar {
+    left: calc(50% - 35px);
+  }
+
+  .Card.Brand_Recognition,
+  .Card.Detailed_Records,
+  .Card.Fully_Customizable {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  .Card.Fully_Customizable {
+    margin-bottom: 0;
+  }
+
+  .Card p {
+    font-size: 1.1rem;
+  }
+  .Belt {
+    top: 260px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 10px;
+    height: 400px;
+    background-color: var(--Cyan);
+  }
+}
+
+@media (max-width: 963px) {
+  .Statistic {
+    padding: 7rem 0 10rem 0;
+  }
+}
+
+@media (max-width: 569px) {
+  .Cards {
+    padding: 2rem;
+  }
+  .Title_Section {
+    width: 100%;
+  }
+  .Title_Section p {
+    width: 350px;
+  }
+}
+
+@media (max-width: 399px) {
+  .Card {
+    width: 100%;
+  }
+
+  .Card p {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 399px) {
+  .Title_Section h1 {
+   font-size: 2rem;
+  }
+   
+  .Title_Section p {
+    width: 90%;
+  }
+}

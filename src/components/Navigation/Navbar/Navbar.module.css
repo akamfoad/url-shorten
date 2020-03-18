@@ -1,0 +1,61 @@
+.Navbar {
+  width: max-content;
+}
+
+.NavList {
+  display: flex;
+  list-style: none;
+  width: 100%;
+}
+
+.NavList li {
+  padding: 5px;
+  margin: 0 1rem;
+}
+
+.NavList li a:active,
+.NavList li a:visited {
+  color: var(--Grayish-Violet);
+}
+
+.NavList li a:hover {
+  color: var(--Dark-Violet);
+}
+
+.NavList.Mobile {
+  flex-direction: column;
+}
+
+.NavList.Mobile li a:active,
+.NavList.Mobile li a:visited {
+  color: #fff;
+}
+
+.NavList.Mobile li {
+  margin: 0.1rem 0;
+}
+
+@media (max-width: 1049px) {
+  .Navbar {
+    grid-column: 1 / 2;
+  }
+  .NavList {
+    height: 100%;
+    align-items: center;
+  }
+}
+
+@media (max-width: 879px) {
+  .Navbar {
+    width: 100%;
+  }
+  .NavList {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 679px) {
+  .NavList {
+    margin-bottom: 1rem;
+  }
+}
