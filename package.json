@@ -1,7 +1,15 @@
 {
   "name": "url-shortening-api",
   "version": "0.1.0",
-  "private": true,
+  "license": "(MIT or GPL-3.0)",
+  "description": "Web site for Shortening URLs",
+  "keywords": [
+    "ReactJS",
+    "ReduxJS",
+    "frontendmentor.io",
+    "javascript",
+    "web-development"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
