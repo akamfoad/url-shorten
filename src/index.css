@@ -42,7 +42,7 @@
 }
 
 body {
-  width: /*1440px*/ 100vw;
+  width: /*1440px*/ 100%;
   font-size: var(--Font-size);
   font-family: var(--Family), sans-serif;
 }

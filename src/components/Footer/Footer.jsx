@@ -57,23 +57,29 @@ const footer = () => {
           <a
             href="https://www.facebook.com/akam.foad"
             target="_blank"
+            rel="noreferrer"
             className={classes.Facebook_Icon}
-          />
+          > </a>
           <a
             href="https://twitter.com/AkamFoad"
             target="_blank"
+            rel="noreferrer"
             className={classes.Twitter_Icon}
-          />
+          > </a>
           <a
-            href="#"
+            href="https://www.pinterest.com"
+            target="_blank"
+            rel="noreferrer"
             alt="I don't have Pinterest 😁"
             className={classes.Pinterest_Icon}
-          />
+          > </a>
           <a
-            href="#"
-            alt="I don't have Pinterest 😁"
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noreferrer"
+            alt="I don't have Instagram 😁"
             className={classes.Instagram_Icon}
-          />
+           > </a>
         </div>
       </div>
     </footer>
