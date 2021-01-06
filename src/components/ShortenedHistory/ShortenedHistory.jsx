@@ -2,20 +2,21 @@ import React from "react";
 import classes from "./ShortenedHistory.module.css";
 import Shortened from "./Shortened/Shortened";
 import { connect } from "react-redux";
-const ShortenedHistory = props => {
+import PropTypes from "prop-types";
+const ShortenedHistory = (props) => {
   const sortByDateASC = (a, b) => {
-    return a.created_at > b.created_at ? -1 : 1;
+    return Date.parse(a.created_at) > Date.parse(b.created_at) ? -1 : 1;
   };
   return (
     <div className={classes.ShortenedHistory}>
       {props.shortened_history
         ? [...props.shortened_history]
             .sort(sortByDateASC)
-            .map(el => (
+            .map(({ id, link, long_url }) => (
               <Shortened
-                key={el.hashid}
-                original_link={el.url}
-                shortened_link={"https://rel.ink/" + el.hashid}
+                key={id}
+                original_link={long_url}
+                shortened_link={link}
               />
             ))
         : null}
@@ -23,8 +24,37 @@ const ShortenedHistory = props => {
   );
 };
 
-const mapStateToProps = state => ({
-  shortened_history: state.shortened_history
+ShortenedHistory.propTypes = {
+  shortened_history: PropTypes.arrayOf(
+    PropTypes.shape({
+      created_at: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+      custom_bitlinks: PropTypes.arrayOf(PropTypes.string),
+      long_url: PropTypes.string.isRequired,
+      archived: PropTypes.bool.isRequired,
+      tags: PropTypes.arrayOf(PropTypes.string),
+      deeplinks: PropTypes.arrayOf(
+        PropTypes.shape({
+          guid: PropTypes.string,
+          bitlink: PropTypes.string,
+          app_uri_path: PropTypes.string,
+          install_url: PropTypes.string,
+          app_guid: PropTypes.string,
+          os: PropTypes.string,
+          install_type: PropTypes.string,
+          created: PropTypes.string,
+          modified: PropTypes.string,
+          brand_guid: PropTypes.string,
+        })
+      ),
+      references: PropTypes.shape({ group: PropTypes.string }),
+    })
+  ),
+};
+
+const mapStateToProps = (state) => ({
+  shortened_history: state.shortened_history,
 });
 
 export default connect(mapStateToProps)(ShortenedHistory);

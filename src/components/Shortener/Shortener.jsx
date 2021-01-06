@@ -2,12 +2,12 @@ import React, { useState, useRef } from "react";
 import classes from "./Shortener.module.css";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions";
-const Shortener = props => {
+const Shortener = (props) => {
   const emailRef = useRef(null);
   const [url, setUrl] = useState("");
   const [error, setError] = useState("");
   const [showerror, setShowerror] = useState(null);
-  const submitHandler = e => {
+  const submitHandler = (e) => {
     e.preventDefault();
     if (url.length > 0) {
       props.onShortenData(url);
@@ -16,17 +16,21 @@ const Shortener = props => {
     }
   };
 
-  const changeHandler = e => {
+  const changeHandler = (e) => {
     setError(e.target.validationMessage);
     setUrl(e.target.value);
-    if (e.target.isValid) {
+
+    const isBitlyUrl = /.+bit\.ly.*/.test(e.target.value);
+
+    if (e.target.isValid && !isBitlyUrl) {
       setShowerror(null);
     } else {
+      if (isBitlyUrl) setError("Already A bitly shortened url");
       setShowerror(classes.Shown);
     }
   };
 
-  const invalidHandler = e => {
+  const invalidHandler = (e) => {
     setError(e.target.validationMessage);
   };
   return (
@@ -52,11 +56,11 @@ const Shortener = props => {
   );
 };
 
-const mapStateToProps = state => ({
-  shortenLoading: state.shortenLoading
+const mapStateToProps = (state) => ({
+  shortenLoading: state.shortenLoading,
 });
-const mapDispatchToProps = dispatch => ({
-  onShortenData: url => dispatch(actions.shorten(url))
+const mapDispatchToProps = (dispatch) => ({
+  onShortenData: (url) => dispatch(actions.shorten(url)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Shortener);
