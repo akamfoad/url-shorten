@@ -15,7 +15,7 @@ const reducer = (state = initialState, action) => {
       };
     case actionTypes.ADD_TO_HISTORY:
       if (
-        !state.shortened_history.map(i => i.hashid).includes(action.item.hashid)
+        !state.shortened_history.map(i => i.id).includes(action.item.id)
       ) {
         return {
           ...state,
